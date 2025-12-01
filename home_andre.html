@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <title>Immobilie verkaufen in {city_name} ({location_modifier}) | ImmoDirect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Immobilie verkaufen in {city_name} ({location_modifier}) – {city_kreis}, {city_bundesland}. Schneller, diskreter Verkauf ohne Maklerprovision. Jetzt kostenlose Wertermittlung anfordern." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+      'Segoe UI', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <!-- TOP BAR -->
+  <div class="bg-slate-900 text-slate-100 text-xs sm:text-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-2">
+      <p class="hidden sm:block">
+        Immobilienankauf · Deutschlandweit · {city_bundesland} & Umgebung
+      </p>
+      <p class="font-medium">
+        📞 Hotline: <a href="tel:+49123456789" class="underline underline-offset-2">+49 123 456 789</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-white/90 backdrop-blur sticky top-0 z-30 border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">
+          ID
+        </div>
+        <div>
+          <div class="text-base font-semibold tracking-tight">
+            ImmoDirect
+          </div>
+          <div class="text-xs text-slate-500 -mt-0.5">
+            Direkter Immobilienankauf
+          </div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-xs sm:text-sm font-medium text-slate-700">
+        <a href="#city-intro" class="hover:text-emerald-600">Über {city_name}</a>
+        <a href="#benefits" class="hover:text-emerald-600">Vorteile</a>
+        <a href="#process" class="hover:text-emerald-600">Ablauf</a>
+        <a href="#faq" class="hover:text-emerald-600">FAQ</a>
+        <a href="#city-seo-content" class="hover:text-emerald-600">Ratgeber</a>
+      </nav>
+
+      <!-- CTA Buttons -->
+      <div class="hidden md:flex items-center gap-3 text-xs sm:text-sm">
+        <a href="#gohighlevel-form"
+           class="px-3 py-1.5 rounded-full border border-slate-200 hover:border-emerald-500 hover:text-emerald-700 transition">
+          Rückruf anfordern
+        </a>
+        <a href="#hero-form"
+           class="px-4 py-1.5 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow-sm">
+          Kostenlose Bewertung
+        </a>
+      </div>
+
+      <!-- Mobile menu -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg border border-slate-200 text-slate-700"
+        aria-label="Menü öffnen"
+      >
+        <span id="mobile-menu-icon-open">☰</span>
+        <span id="mobile-menu-icon-close" class="hidden">✕</span>
+      </button>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-100 bg-white">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-2 text-sm">
+        <a href="#city-intro" class="py-1">Über {city_name}</a>
+        <a href="#benefits" class="py-1">Vorteile</a>
+        <a href="#process" class="py-1">Ablauf</a>
+        <a href="#gohighlevel-form" class="py-1">Formular</a>
+        <a href="#faq" class="py-1">FAQ</a>
+        <a href="#city-seo-content" class="py-1">Ratgeber</a>
+        <a href="#hero-form"
+           class="mt-2 inline-flex items-center justify-center px-4 py-2 rounded-full bg-emerald-600 text-white font-semibold">
+          Kostenlose Bewertung
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HERO SECTION WITH MULTI-STEP FORM -->
+    <section id="hero" class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 via-slate-50 to-slate-100"></div>
+
+      <div class="max-w-6xl mx-auto px-4 py-12 lg:py-18 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+          <!-- HERO TEXT -->
+          <div>
+            <div class="inline-flex items-center gap-2 bg-white/80 border border-emerald-100 rounded-full px-3 py-1 text-xs text-emerald-700 mb-4 shadow-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              Immobilie verkaufen in {city_name} ({location_modifier})
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900">
+              Immobilie sicher & diskret in
+              <span class="text-emerald-600">{city_name}</span> verkaufen –
+              ohne Maklerprovision.
+            </h1>
+
+            <p class="mt-4 text-sm sm:text-base lg:text-lg text-slate-600 max-w-xl">
+              Wir kaufen Wohnungen, Häuser und Gewerbeimmobilien in {city_kreis}, {city_bundesland}
+              direkt an. Sie erhalten innerhalb von 24–48 Stunden eine erste Preiseinschätzung.
+            </p>
+
+            <div class="mt-6 flex flex-wrap items-center gap-4">
+              <a href="#hero-form"
+                 class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 shadow-sm">
+                Kostenlose Wertermittlung starten
+              </a>
+              <button
+                type="button"
+                class="inline-flex items-center justify-center px-4 py-2 rounded-full border border-slate-200 text-sm font-medium text-slate-700 hover:border-emerald-500 hover:text-emerald-700"
+                onclick="document.getElementById('process').scrollIntoView({ behavior: 'smooth' })">
+                So läuft der Verkauf ab
+              </button>
+            </div>
+          </div>
+
+          <!-- MULTI-STEP HERO FORM -->
+          <div id="hero-form">
+            <div class="bg-white border border-slate-100 rounded-2xl shadow-xl shadow-emerald-100/60 p-6 sm:p-7">
+              <h2 class="text-lg font-semibold text-slate-900">
+                In 60 Sekunden zur ersten Preiseinschätzung
+              </h2>
+              <p class="mt-1.5 text-xs text-slate-500">
+                Beantworten Sie wenige Fragen – wir melden uns mit einer Einschätzung für Ihre Immobilie in {city_name}.
+              </p>
+
+              <!-- Step Indicators -->
+              <div class="flex items-center justify-between text-xs font-semibold mt-5 mb-4">
+                <div id="step1Indicator" class="flex-1 text-center text-emerald-600">1</div>
+                <div id="step2Indicator" class="flex-1 text-center text-slate-400">2</div>
+                <div id="step3Indicator" class="flex-1 text-center text-slate-400">3</div>
+              </div>
+
+              <form id="multiForm" class="space-y-4 text-sm">
+
+                <!-- STEP 1 -->
+                <div id="step1" class="step">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-xs font-medium text-slate-600 mb-1">
+                        Immobilientyp
+                      </label>
+                      <select class="w-full rounded-lg border border-slate-200 px-3 py-2">
+                        <option>Eigentumswohnung</option>
+                        <option>Einfamilienhaus</option>
+                        <option>Mehrfamilienhaus</option>
+                        <option>Gewerbeimmobilie</option>
+                        <option>Grundstück</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label class="block text-xs font-medium text-slate-600 mb-1">
+                        Stadt / Region
+                      </label>
+                      <input type="text" placeholder="{city_name}, {city_kreis}"
+                             class="w-full rounded-lg border border-slate-200 px-3 py-2"/>
+                    </div>
+                  </div>
+
+                  <button type="button" onclick="nextStep()"
+                          class="w-full rounded-lg bg-emerald-600 text-white text-sm font-semibold py-2.5 mt-4 hover:bg-emerald-700">
+                    Weiter
+                  </button>
+                </div>
+
+                <!-- STEP 2 -->
+                <div id="step2" class="step hidden">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-xs font-medium text-slate-600 mb-1">
+                        Wohn-/Nutzfläche (ca.)
+                      </label>
+                      <input type="number" placeholder="z. B. 95 m²"
+                             class="w-full rounded-lg border border-slate-200 px-3 py-2"/>
+                    </div>
+
+                    <div>
+                      <label class="block text-xs font-medium text-slate-600 mb-1">
+                        Geplanter Verkaufszeitpunkt
+                      </label>
+                      <select class="w-full rounded-lg border border-slate-200 px-3 py-2">
+                        <option>So schnell wie möglich</option>
+                        <option>In den nächsten 3 Monaten</option>
+                        <option>In 3–6 Monaten</option>
+                        <option>Noch unklar / flexibel</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="flex justify-between mt-4">
+                    <button type="button" onclick="prevStep()"
+                            class="px-4 py-2 rounded-lg border border-slate-200 text-slate-700">
+                      Zurück
+                    </button>
+
+                    <button type="button" onclick="nextStep()"
+                            class="px-5 py-2.5 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700">
+                      Weiter
+                    </button>
+                  </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div id="step3" class="step hidden">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-xs font-medium text-slate-600 mb-1">Ihr Name</label>
+                      <input type="text" placeholder="Vor- und Nachname"
+                             class="w-full rounded-lg border border-slate-200 px-3 py-2"/>
+                    </div>
+
+                    <div>
+                      <label class="block text-xs font-medium text-slate-600 mb-1">E-Mail</label>
+                      <input type="email" placeholder="sie@beispiel.de"
+                             class="w-full rounded-lg border border-slate-200 px-3 py-2"/>
+                    </div>
+                  </div>
+
+                  <div class="mt-3">
+                    <label class="block text-xs font-medium text-slate-600 mb-1">Telefon</label>
+                    <input type="tel" placeholder="+49 ..."
+                           class="w-full rounded-lg border border-slate-200 px-3 py-2"/>
+                  </div>
+
+                  <div class="flex items-start gap-2 text-[11px] text-slate-500 mt-2">
+                    <input type="checkbox" class="mt-0.5" checked>
+                    <p>Ich bin damit einverstanden, kontaktiert zu werden. Keine Weitergabe an Dritte.</p>
+                  </div>
+
+                  <div class="flex justify-between mt-4">
+                    <button type="button" onclick="prevStep()"
+                            class="px-4 py-2 rounded-lg border border-slate-200 text-slate-700">
+                      Zurück
+                    </button>
+
+                    <button type="submit"
+                            class="px-5 py-2.5 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700">
+                      Anfrage senden
+                    </button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section id="trust" class="bg-white border-y border-slate-100">
+      <div class="max-w-6xl mx-auto px-4 py-6">
+        <div class="flex flex-wrap items-center justify-center gap-6 text-[11px] sm:text-xs text-slate-500">
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-600 text-lg">✔</span>
+            <span>Geprüfter Direktankäufer in {city_bundesland}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-600 text-lg">🏛</span>
+            <span>Zusammenarbeit mit Notaren & Fachanwälten</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-600 text-lg">★</span>
+            <span>Top Zufriedenheit bei Eigentümern in {city_name}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-600 text-lg">🔒</span>
+            <span>Diskreter Verkauf – kein öffentliches Inserat</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CITY INTRO SECTION -->
+    <section id="city-intro" class="max-w-6xl mx-auto px-4 py-12 lg:py-16">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+          Immobilie verkaufen in {city_name} – was Eigentümer wissen sollten
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-slate-600">
+          {city_name} ist eine gefragte Wohnlage in {city_kreis} ({city_bundesland}) und
+          zählt aktuell rund {city_population} Einwohner. Der Markt ist dynamisch und je nach
+          Stadtteil sehr unterschiedlich.
+        </p>
+        <p class="mt-3 text-sm sm:text-base text-slate-600">
+          Viele Eigentümer fragen sich: Welcher Preis ist realistisch? Wie finde ich seriöse
+          Käufer? Wie lange dauert der Prozess? Wir bieten eine direkte, diskrete Lösung –
+          ohne aufwändige Vermarktung über Makler.
+        </p>
+        <p class="mt-3 text-sm sm:text-base text-slate-600">
+          Besonders interessant ist unser Ansatz für Eigentümer, die Wert auf Diskretion legen,
+          geerbte Immobilien veräußern oder Objekte mit Renovierungsbedarf verkaufen möchten.
+        </p>
+      </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section id="benefits" class="bg-slate-50 border-y border-slate-100">
+      <div class="max-w-6xl mx-auto px-4 py-12 lg:py-16">
+        <div class="max-w-3xl">
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+            Ihre Vorteile beim Direktverkauf in {city_name}
+          </h2>
+          <p class="mt-3 text-sm text-slate-600">
+            Fair, transparent und schnell – angepasst an Ihre persönliche Situation.
+          </p>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
+          <div class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+            <h3 class="font-semibold text-slate-900 text-sm">1. Keine Maklerprovision</h3>
+            <p class="mt-2 text-xs text-slate-600">
+              Direkter Verkauf ohne Courtage – spart mehrere tausend Euro.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+            <h3 class="font-semibold text-slate-900 text-sm">2. Schnelle Entscheidung</h3>
+            <p class="mt-2 text-xs text-slate-600">
+              Erste Preisindikation in 24–48 Stunden.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+            <h3 class="font-semibold text-slate-900 text-sm">3. Diskreter Verkauf</h3>
+            <p class="mt-2 text-xs text-slate-600">
+              Kein Inserat, keine Nachbarschaftsfragen – auf Wunsch komplett off-market.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+            <h3 class="font-semibold text-slate-900 text-sm">4. Kauf auch bei Renovierungsbedarf</h3>
+            <p class="mt-2 text-xs text-slate-600">
+              Auch Immobilien mit Sanierungsstau sind interessant.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+            <h3 class="font-semibold text-slate-900 text-sm">5. Unterstützung bis zum Notar</h3>
+            <p class="mt-2 text-xs text-slate-600">
+              Wir koordinieren Unterlagen und Notartermin komplett für Sie.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+            <h3 class="font-semibold text-slate-900 text-sm">6. Flexible Übergabe</h3>
+            <p class="mt-2 text-xs text-slate-600">
+              Schnelle Auszahlung oder Übergangszeit – wir passen uns an.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section id="process" class="max-w-6xl mx-auto px-4 py-12 lg:py-16">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+          So läuft der Verkauf Ihrer Immobilie in {city_name} ab
+        </h2>
+        <p class="mt-3 text-sm text-slate-600">
+          Klar strukturiert, transparent und mit festen Ansprechpartnern.
+        </p>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-5 gap-4 text-xs sm:text-sm">
+        <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-sm">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-xs flex items-center justify-center">1</span>
+            <h3 class="font-semibold">Anfrage</h3>
+          </div>
+          <p class="mt-2 text-slate-600">Sie senden uns online die wichtigsten Daten.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-sm">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-xs flex items-center justify-center">2</span>
+            <h3 class="font-semibold">Erste Einschätzung</h3>
+          </div>
+          <p class="mt-2 text-slate-600">Wir melden uns mit einer Preisspanne.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-sm">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-xs flex items-center justify-center">3</span>
+            <h3 class="font-semibold">Besichtigung</h3>
+          </div>
+          <p class="mt-2 text-slate-600">Vor Ort oder digital – je nach Situation.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-sm">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-xs flex items-center justify-center">4</span>
+            <h3 class="font-semibold">Verbindliches Angebot</h3>
+          </div>
+          <p class="mt-2 text-slate-600">Sie erhalten ein schriftliches Kaufangebot.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-sm">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-xs flex items-center justify-center">5</span>
+            <h3 class="font-semibold">Notar & Auszahlung</h3>
+          </div>
+          <p class="mt-2 text-slate-600">Auszahlung wenige Tage nach Beurkundung.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GHL FORM SECTION (Updated to match multi-step UI) -->
+    <section id="gohighlevel-form" class="bg-white border-y border-slate-100">
+      <div class="max-w-4xl mx-auto px-4 py-12 lg:py-16">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+            Jetzt in wenigen Schritten unverbindliches Angebot sichern
+          </h2>
+          <p class="mt-3 text-sm text-slate-600">
+            Über unser sicheres Online-Formular erfassen wir alle relevanten Details zu Ihrer Immobilie in {city_name}.
+          </p>
+        </div>
+
+        <!-- Updated Multi-Step Visual Shell -->
+        <div class="mt-8 bg-slate-50 border border-slate-200 rounded-2xl shadow-sm p-4 sm:p-6">
+
+          <!-- Matching Step Indicators -->
+          <div class="flex items-center justify-between text-xs font-semibold text-slate-600 mb-4">
+            <div class="flex-1 text-center text-emerald-600">1</div>
+            <div class="flex-1 text-center text-slate-400">2</div>
+            <div class="flex-1 text-center text-slate-400">3</div>
+          </div>
+
+          <!-- Embed Container -->
+          <div class="bg-white rounded-xl border border-dashed border-emerald-300 p-4 sm:p-6 text-center text-sm text-slate-500">
+            <p class="font-semibold text-slate-700 mb-2">
+              Hier wird das mehrstufige GoHighLevel-Formular eingebunden.
+            </p>
+            <p>
+              Bitte ersetzen Sie diesen Platzhalter durch den Middleman → GoHighLevel Form-Embed-Code
+              für <strong>{city_name}</strong>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NEIGHBORHOOD SECTION -->
+    <section id="neighborhoods" class="max-w-6xl mx-auto px-4 py-12 lg:py-16">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+            Beliebte Lagen & Stadtteile in {city_name}
+          </h2>
+          <p class="mt-3 text-sm text-slate-600">
+            Dynamisch generiert über die Google Places API.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 text-sm">
+          <h3 class="font-semibold text-slate-900 mb-3 text-sm">
+            Dynamisch angezeigte Stadtteile
+          </h3>
+          <ul class="space-y-2 text-xs text-slate-600">
+            <li>• {gplaces_neighborhood_1}</li>
+            <li>• {gplaces_neighborhood_2}</li>
+            <li>• {gplaces_neighborhood_3}</li>
+            <li>• {gplaces_neighborhood_4}</li>
+            <li>• {gplaces_neighborhood_5}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHORTENED SEO CONTENT -->
+    <section id="city-seo-content" class="bg-slate-50 border-y border-slate-100">
+      <div class="max-w-6xl mx-auto px-4 py-12 lg:py-16">
+        <div class="max-w-3xl">
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+            Ratgeber: Immobilie verkaufen in {city_name} ({city_kreis}, {city_bundesland})
+          </h2>
+
+          <p class="mt-3 text-sm text-slate-600">
+            Der Verkauf einer Immobilie in {city_name} hängt vor allem von Lage, Zustand
+            und Marktsituation ab. Zentrale Lagen sind stark nachgefragt, Randlagen punkten
+            mit Ruhe und Platz. Renovierungen können den Wert steigern, lohnen sich aber
+            nicht immer.
+          </p>
+
+          <p class="mt-3 text-sm text-slate-600">
+            Ein Maklerverkauf dauert oft lange und ist wenig diskret. Der Direktverkauf
+            ist schneller und transparenter: kurze Datenerfassung, Besichtigung, Angebot,
+            Notartermin.
+          </p>
+
+          <p class="mt-3 text-sm text-slate-600">
+            Welche Lösung für Sie passt, hängt von Ihrer persönlichen Situation ab. Wir
+            bieten Eigentümern in {city_name} eine unkomplizierte Bewertung und klare
+            Entscheidungsgrundlage.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED CITIES -->
+    <section id="radius-cities" class="max-w-6xl mx-auto px-4 py-12 lg:py-16">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+            Wir kaufen nicht nur in {city_name}
+          </h2>
+          <p class="mt-3 text-sm text-slate-600">
+            Auch umliegende Orte im Radius werden abgedeckt.
+          </p>
+        </div>
+
+        <p class="text-xs text-slate-500 max-w-sm">
+          Automatisch generiert per Koordinatenradius.
+        </p>
+      </div>
+
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+        <a href="{nearby_city_1_url}" class="bg-white rounded-2xl border border-slate-100 p-4 hover:border-emerald-500 hover:shadow-sm transition">
+          <div class="font-semibold text-slate-900 text-sm">{nearby_city_1}</div>
+          <p class="mt-1 text-xs text-slate-600">Jetzt Infos ansehen.</p>
+        </a>
+
+        <a href="{nearby_city_2_url}" class="bg-white rounded-2xl border border-slate-100 p-4 hover:border-emerald-500 hover:shadow-sm transition">
+          <div class="font-semibold text-slate-900 text-sm">{nearby_city_2}</div>
+          <p class="mt-1 text-xs text-slate-600">Direktankauf in {nearby_city_2}.</p>
+        </a>
+
+        <a href="{nearby_city_3_url}" class="bg-white rounded-2xl border border-slate-100 p-4 hover:border-emerald-500 hover:shadow-sm transition">
+          <div class="font-semibold text-slate-900 text-sm">{nearby_city_3}</div>
+          <p class="mt-1 text-xs text-slate-600">Wohnung oder Haus verkaufen.</p>
+        </a>
+
+        <a href="{nearby_city_4_url}" class="bg-white rounded-2xl border border-slate-100 p-4 hover:border-emerald-500 hover:shadow-sm transition">
+          <div class="font-semibold text-slate-900 text-sm">{nearby_city_4}</div>
+          <p class="mt-1 text-xs text-slate-600">Mehrfamilienhausverkauf.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="bg-slate-50 border-y border-slate-100">
+      <div class="max-w-6xl mx-auto px-4 py-12 lg:py-16">
+        <div class="max-w-3xl">
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+            Häufige Fragen von Eigentümern in {city_name}
+          </h2>
+          <p class="mt-3 text-sm text-slate-600">
+            Antworten auf die häufigsten Fragen.
+          </p>
+        </div>
+
+        <div class="mt-6 space-y-3 text-sm">
+          <details class="group bg-white rounded-xl border border-slate-100 p-4">
+            <summary class="flex items-center justify-between cursor-pointer">
+              <span class="font-medium text-slate-900 text-sm">Kostet die Bewertung etwas?</span>
+              <span class="text-slate-400 group-open:hidden">+</span>
+              <span class="text-slate-400 hidden group-open:inline">−</span>
+            </summary>
+            <p class="mt-3 text-xs text-slate-600">
+              Nein. Die Bewertung ist kostenlos & unverbindlich.
+            </p>
+          </details>
+
+          <details class="group bg-white rounded-xl border border-slate-100 p-4">
+            <summary class="flex items-center justify-between cursor-pointer">
+              <span class="font-medium text-slate-900 text-sm">Wie schnell geht der Verkauf?</span>
+              <span class="text-slate-400 group-open:hidden">+</span>
+              <span class="text-slate-400 hidden group-open:inline">−</span>
+            </summary>
+            <p class="mt-3 text-xs text-slate-600">
+              Häufig nur wenige Wochen bis zur Auszahlung.
+            </p>
+          </details>
+
+          <details class="group bg-white rounded-xl border border-slate-100 p-4">
+            <summary class="flex items-center justify-between cursor-pointer">
+              <span class="font-medium text-slate-900 text-sm">Kaufen Sie auch vermietete Immobilien?</span>
+              <span class="text-slate-400 group-open:hidden">+</span>
+              <span class="text-slate-400 hidden group-open:inline">−</span>
+            </summary>
+            <p class="mt-3 text-xs text-slate-600">
+              Ja, auch vermietete Wohnungen & Häuser.
+            </p>
+          </details>
+
+          <details class="group bg-white rounded-xl border border-slate-100 p-4">
+            <summary class="flex items-center justify-between cursor-pointer">
+              <span class="font-medium text-slate-900 text-sm">Muss ich renovieren?</span>
+              <span class="text-slate-400 group-open:hidden">+</span>
+              <span class="text-slate-400 hidden group-open:inline">−</span>
+            </summary>
+            <p class="mt-3 text-xs text-slate-600">
+              Nein, wir kaufen auch renovierungsbedürftig.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="max-w-6xl mx-auto px-4 py-12 lg:py-16">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+            Erfahrungen von Eigentümern aus {city_bundesland}
+          </h2>
+          <p class="mt-3 text-sm text-slate-600">
+            Viele Anfragen entstehen durch Empfehlungen.
+          </p>
+        </div>
+        <p class="text-xs text-slate-500 max-w-sm">
+          Originale Referenzen anonymisiert auf Anfrage.
+        </p>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+          <p class="text-xs text-slate-600 italic">
+            „Diskrete Abwicklung ohne dass Nachbarn etwas mitbekommen haben.“
+          </p>
+          <p class="mt-3 text-[11px] text-slate-500 font-medium">
+            – Eigentümerin aus {city_name}
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+          <p class="text-xs text-slate-600 italic">
+            „Direktverkauf nach Erbschaft – viel Zeit gespart.“
+          </p>
+          <p class="mt-3 text-[11px] text-slate-500 font-medium">
+            – Erbengemeinschaft {city_bundesland}
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+          <p class="text-xs text-slate-600 italic">
+            „Faire und realistische Preise, keine falschen Versprechen.“
+          </p>
+          <p class="mt-3 text-[11px] text-slate-500 font-medium">
+            – Verkäufer aus {city_kreis}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="final-cta" class="bg-slate-900 text-slate-50">
+      <div class="max-w-6xl mx-auto px-4 py-12 lg:py-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+
+        <div class="flex-1">
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">
+            Bereit für den nächsten Schritt in {city_name}?
+          </h2>
+          <p class="mt-3 text-sm text-slate-300">
+            Fordern Sie jetzt Ihre kostenlose Preiseinschätzung an.
+          </p>
+
+          <div class="mt-5 flex flex-wrap items-center gap-4 text-sm">
+            <a href="#hero-form"
+               class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-emerald-500 text-white font-semibold hover:bg-emerald-400 transition shadow-sm">
+              Bewertung starten
+            </a>
+
+            <a href="tel:+49123456789"
+               class="inline-flex items-center justify-center px-4 py-2 rounded-full border border-slate-500 text-slate-100 hover:border-emerald-400 hover:text-emerald-100">
+              Direkt anrufen: +49 123 456 789
+            </a>
+          </div>
+        </div>
+
+        <div class="flex-1 text-xs text-slate-400">
+          <p>
+            „Je früher Sie Klarheit haben, desto besser können Sie planen.“
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 text-xs sm:text-sm">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="space-y-1">
+        <div class="font-semibold text-slate-100">
+          ImmoDirect – Direkter Immobilienankauf in {city_name} & {city_bundesland}
+        </div>
+        <p class="text-[11px] sm:text-xs text-slate-500">
+          Beispielstraße 1 · 00000 {city_name} · Deutschland
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-4 text-[11px] sm:text-xs">
+        <a href="{impressum_url}" class="hover:text-slate-200">Impressum</a>
+        <a href="{datenschutz_url}" class="hover:text-slate-200">Datenschutz</a>
+        <a href="{agb_url}" class="hover:text-slate-200">AGB</a>
+        <a href="{magazin_url}" class="hover:text-slate-200">Magazin</a>
+        <a href="{cookie_url}" class="hover:text-slate-200">Cookie-Einstellungen</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE MENU TOGGLE -->
+  <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('mobile-menu-icon-open');
+    const iconClose = document.getElementById('mobile-menu-icon-close');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- MULTI-STEP FORM LOGIC -->
+  <script>
+    let currentStep = 1;
+
+    function showStep(step) {
+      document.querySelectorAll(".step").forEach(s => s.classList.add("hidden"));
+      document.getElementById("step" + step).classList.remove("hidden");
+
+      document.getElementById("step1Indicator").classList.toggle("text-emerald-600", step === 1);
+      document.getElementById("step2Indicator").classList.toggle("text-emerald-600", step === 2);
+      document.getElementById("step3Indicator").classList.toggle("text-emerald-600", step === 3);
+    }
+
+    function nextStep() {
+      if (currentStep < 3) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+  </script>
+
+</body>
+</html>
